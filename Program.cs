@@ -43,7 +43,7 @@ namespace Calculadora
 
                 Console.WriteLine("Escreva qual função deseja fazer com os numeros");
                 Console.WriteLine("1 para soma, 2 para subtração, 3 para multiplicação, 4 para divisão");
-<<<<<<< Updated upstream
+
                 int x = Convert.ToInt32(Console.ReadLine());
                 Console.Clear();
                 if (x == 1)
@@ -69,11 +69,6 @@ namespace Calculadora
                         Console.WriteLine(string.Format("O Resultado entre a divisão dos numeros {0} e {1} é: {2}", n1, n2, functions.divs(n1, n2)));
                     }
 
-=======
-                string x = (Console.ReadLine());
-                if (!())
-                functions.Escolha(x,n1,n2);
->>>>>>> Stashed changes
 
                 }
 
@@ -105,44 +100,6 @@ namespace Calculadora
                 divs = n1 / n2;
                 return divs;
             }
-<<<<<<< Updated upstream
-=======
-        public static string Escolha(string x, double n1, double n2)
-        {
-            string resultado;
-            Console.Clear();
-            if (x == "1")
-            {
-                resultado = (string.Format("O Resultado entre a soma dos numeros {0} e {1} é: {2}", n1, n2, functions.soma(n1,n2)));
-            }
-            else if (x == "2")
-            {
-                resultado = (string.Format("O Resultado entre a substração dos numeros {0} e {1} é: {2}", n1, n2, functions.subs(n1, n2)));
-            }
-            else if (x == "3")
-            {
-                resultado = (string.Format("O Resultado entre a multiplicação dos numeros {0} e {1} é: {2}", n1, n2, functions.mult(n1, n2)));
-            }
-            else if (x == "4")
-            {
-                if (n2 == 0)
-                {
-                    resultado = ("O segundo numero não pode ser zero fiadaputa");
-                }
-                else
-                {
-                    resultado = (string.Format("O Resultado entre a divisão dos numeros {0} e {1} é: {2}", n1, n2, functions.divs(n1, n2)));
-                }
-            }
-            else
-            { 
-                resultado = ("Opção invalida, ecolha a opção novamente");
-
-            }
-            return resultado;
-        }
-
->>>>>>> Stashed changes
 
         }
     }
