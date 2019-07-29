@@ -37,32 +37,19 @@ namespace Calculadora
         {
             {
                 Console.WriteLine("Escreva numero 1");
-
-                string n1 = (Console.ReadLine());
-                while (n1 == "" || n1 == null || Convert.ToInt64(n1) <= 0 && Convert.ToInt64(n1) > 4)
-
-                double n1 = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("Escreva o numero 2");
-                double n2 = Convert.ToDouble(Console.ReadLine());
-
-                Console.WriteLine("Escreva qual função deseja fazer com os numeros");
-                Console.WriteLine("1 para soma, 2 para subtração, 3 para multiplicação, 4 para divisão");
-
-                int x = Convert.ToInt32(Console.ReadLine());
-                Console.Clear();
-                if (x == 1)
-
+                string n1 = Console.ReadLine();
+                while (n1 == "" || n1 == null)
                 {
                     Console.Clear();
                     Console.WriteLine("Escreva o numero 1");
                     Console.WriteLine("Opção inválida");
                     Console.WriteLine("Insira o numero corretamente");
                     n1 = Console.ReadLine();
-                    Console.Clear();
                 }
+               
                 Console.WriteLine("Escreva o numero 2");
                 string n2 = (Console.ReadLine());
-                while (n2 == "" ||n2 == null || Convert.ToInt64(n2) <= 0 && Convert.ToInt64(n2) > 4)
+                while (n2 == "" ||n2 == null)
                 {
                     Console.Clear();
                     Console.WriteLine("Escreva o numero 2");
@@ -74,7 +61,7 @@ namespace Calculadora
                 Console.Clear();
                 Console.WriteLine("Escreva qual função deseja fazer com os numeros");
                 Console.WriteLine("1 para soma, 2 para subtração, 3 para multiplicação, 4 para divisão");
-                string x = Convert.ToString(Console.ReadLine()); //Falta o tratamento de empty string
+                string x = Convert.ToString(Console.ReadLine());
                 while (x == "" || x == null || Convert.ToInt64(x) <= 0 && Convert.ToInt64(x) > 4)
                 {
                     Console.Clear();
