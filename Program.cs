@@ -37,8 +37,21 @@ namespace Calculadora
         {
             {
                 Console.WriteLine("Escreva numero 1");
+
                 string n1 = (Console.ReadLine());
                 while (n1 == "" || n1 == null || Convert.ToInt64(n1) <= 0 && Convert.ToInt64(n1) > 4)
+
+                double n1 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Escreva o numero 2");
+                double n2 = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("Escreva qual função deseja fazer com os numeros");
+                Console.WriteLine("1 para soma, 2 para subtração, 3 para multiplicação, 4 para divisão");
+
+                int x = Convert.ToInt32(Console.ReadLine());
+                Console.Clear();
+                if (x == 1)
+
                 {
                     Console.Clear();
                     Console.WriteLine("Escreva o numero 1");
