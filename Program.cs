@@ -43,10 +43,18 @@ namespace Calculadora
 
                 Console.WriteLine("Escreva qual função deseja fazer com os numeros");
                 Console.WriteLine("1 para soma, 2 para subtração, 3 para multiplicação, 4 para divisão");
-                int x = Convert.ToInt32(Console.ReadLine());
-                escolha(x);
+                string x = Convert.ToString(Console.ReadLine());
+                while (x == "" || x == null || Convert.ToInt64(x) <= 0 && Convert.ToInt64(x) > 4)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Escreva qual função deseja fazer com os numeros");
+                    Console.WriteLine("1 para soma, 2 para subtração, 3 para multiplicação, 4 para divisão");
+                    Console.WriteLine("Insira uma opção válida");
+                    x = Console.ReadLine();
 
                 }
+                functions.Escolha(x, n1, n2);
+            }
 
             }
         }
@@ -76,40 +84,41 @@ namespace Calculadora
                 divs = n1 / n2;
                 return divs;
             }
-        public static string Escolha(x)
-        { 
+        public static string Escolha(string x, double n1, double n2)
+        {
+            string result;
             Console.Clear();
-            if (x == 1)
+            if (x == "1")
             {
-                Console.WriteLine(string.Format("O Resultado entre a soma dos numeros {0} e {1} é: {2}", n1, n2, functions.soma(n1, n2)));
+                result = (string.Format("O Resultado entre a soma dos numeros {0} e {1} é: {2}", n1, n2, functions.soma(n1, n2)));
             }
-            else if (x == 2)
+            else if (x == "2")
             {
-                Console.WriteLine(string.Format("O Resultado entre a substração dos numeros {0} e {1} é: {2}", n1, n2, functions.subs(n1, n2)));
+                result = (string.Format("O Resultado entre a substração dos numeros {0} e {1} é: {2}", n1, n2, functions.subs(n1, n2)));
             }
-            else if (x == 3)
+            else if (x == "3")
             {
-                Console.WriteLine(string.Format("O Resultado entre a multiplicação dos numeros {0} e {1} é: {2}", n1, n2, functions.mult(n1, n2)));
+                result = (string.Format("O Resultado entre a multiplicação dos numeros {0} e {1} é: {2}", n1, n2, functions.mult(n1, n2)));
             }
-            else if (x == 4)
+            else if (x == "4")
             {
                 if (n2 == 0)
                 {
-                    Console.WriteLine("O segundo numero não pode ser zero fiadaputa");
+                    result = ("O segundo numero não pode ser zero fiadaputa");
                 }
                 else
                 {
-                    Console.WriteLine(string.Format("O Resultado entre a divisão dos numeros {0} e {1} é: {2}", n1, n2, functions.divs(n1, n2)));
+                    result = (string.Format("O Resultado entre a divisão dos numeros {0} e {1} é: {2}", n1, n2, functions.divs(n1, n2)));
                 }
             }
             else
             {
-                Console.WriteLine("Opção invalida, ecolha a opção novamente");
+                result = ("Opção invalida, ecolha a opção novamente");
 
             }
+            return result;
         }
 
 
         }
     }
-}
