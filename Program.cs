@@ -37,27 +37,42 @@ namespace Calculadora
         {
             {
                 Console.WriteLine("Escreva numero 1");
-                double n1 = Convert.ToDouble(Console.ReadLine());
+                string n1 = (Console.ReadLine());
+                while (n1 == "" || n1 == null || Convert.ToInt64(n1) <= 0 && Convert.ToInt64(n1) > 4)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Escreva o numero 1");
+                    Console.WriteLine("Opção inválida");
+                    Console.WriteLine("Insira o numero corretamente");
+                    n1 = Console.ReadLine();
+                    Console.Clear();
+                }
                 Console.WriteLine("Escreva o numero 2");
-                double n2 = Convert.ToDouble(Console.ReadLine());
+                string n2 = (Console.ReadLine());
+                while (n2 == "" ||n2 == null || Convert.ToInt64(n2) <= 0 && Convert.ToInt64(n2) > 4)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Escreva o numero 2");
+                    Console.WriteLine("Opção inválida");
+                    Console.WriteLine("Insira o numero corretamente");
+                    n2 = Console.ReadLine();
+                }
 
+                Console.Clear();
                 Console.WriteLine("Escreva qual função deseja fazer com os numeros");
                 Console.WriteLine("1 para soma, 2 para subtração, 3 para multiplicação, 4 para divisão");
                 string x = Convert.ToString(Console.ReadLine()); //Falta o tratamento de empty string
-                while (x == "" || x == null)
+                while (x == "" || x == null || Convert.ToInt64(x) <= 0 && Convert.ToInt64(x) > 4)
                 {
                     Console.Clear();
                     Console.WriteLine("Escreva qual função deseja fazer com os numeros");
                     Console.WriteLine("1 para soma, 2 para subtração, 3 para multiplicação, 4 para divisão");
                     Console.WriteLine("Insira uma opção");
                     x = Console.ReadLine();
+                    Console.Clear();
 
                 }
-                while (Convert.ToInt64(x) <= 0 && Convert.ToInt64(x) > 4)
-                {
-                }
-
-                functions.Escolha(x, n1, n2);//chama função quando sair dos whiles
+                functions.Escolha(x, Convert.ToDouble(n1), Convert.ToDouble(n2));//chama função quando sair dos whiles
             }
 
             }
