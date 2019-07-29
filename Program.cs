@@ -43,17 +43,21 @@ namespace Calculadora
 
                 Console.WriteLine("Escreva qual função deseja fazer com os numeros");
                 Console.WriteLine("1 para soma, 2 para subtração, 3 para multiplicação, 4 para divisão");
-                string x = Convert.ToString(Console.ReadLine());
-                while (x == "" || x == null || Convert.ToInt64(x) <= 0 && Convert.ToInt64(x) > 4)
+                string x = Convert.ToString(Console.ReadLine()); //Falta o tratamento de empty string
+                while (x == "" || x == null)
                 {
                     Console.Clear();
                     Console.WriteLine("Escreva qual função deseja fazer com os numeros");
                     Console.WriteLine("1 para soma, 2 para subtração, 3 para multiplicação, 4 para divisão");
-                    Console.WriteLine("Insira uma opção válida");
+                    Console.WriteLine("Insira uma opção");
                     x = Console.ReadLine();
 
                 }
-                functions.Escolha(x, n1, n2);
+                while (Convert.ToInt64(x) <= 0 && Convert.ToInt64(x) > 4)
+                {
+                }
+
+                functions.Escolha(x, n1, n2);//chama função quando sair dos whiles
             }
 
             }
